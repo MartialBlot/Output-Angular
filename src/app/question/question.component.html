@@ -1,0 +1,7 @@
+{{question}}
+<input [hidden]="hidden" type="checkbox" id="oui" [(ngModel)]="trueAnswer" (click)="check()">
+<label [hidden]="hidden" for="oui">Oui</label>
+<input [hidden]="hidden" type="checkbox" id="non" [(ngModel)]="falseAnswer" value="false" (click)="check()">
+<label [hidden]="hidden" for="non">Non</label>
+<a [hidden]="showReponse">La bonne réponse était: {{bonneReponse}}</a>
+<button (click)="sendAnswer()" [hidden]="valide">Validé</button>
