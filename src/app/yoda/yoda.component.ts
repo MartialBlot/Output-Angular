@@ -13,6 +13,8 @@ export class YodaComponent implements OnInit {
   finish: boolean = true;
   yodaSentence: string;
   score: number;
+  decompte: number = 10;
+  btnResult: boolean = true;
 
   question1 = new Question('1' , 'Aimes-tu les logiciels libres ?' , true, 3 );
   question2 = new Question('2', 'La force a-t-elle créé Linux ?', true, 1);
@@ -40,6 +42,13 @@ export class YodaComponent implements OnInit {
   reponseAnswers(question) {
     this.answers.push(question);
     console.log(this.answers);
+  }
+
+  compteur($event) {
+    this.decompte -= 1;
+    if(this.decompte === 0){
+      this.btnResult = false;
+    }
   }
 
   questionFinish() {

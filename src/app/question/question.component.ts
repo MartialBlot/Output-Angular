@@ -15,11 +15,14 @@ export class QuestionComponent implements OnInit {
   falseAnswer: boolean;
   valide: boolean = true;
   answer: boolean;
+  compteur: string = "1";
 
   @Output()
   getAnswer: EventEmitter<any> = new EventEmitter();
   @Output()
   getFinish: EventEmitter<any> = new EventEmitter();
+  @Output()
+  decompte: EventEmitter<any> = new EventEmitter();
 
   @Input() public question: string;
   @Input() public bonneReponse: boolean;
@@ -30,6 +33,7 @@ export class QuestionComponent implements OnInit {
   }
 
   sendAnswer(): void {
+    this.decompte.emit(this.compteur);
     if (this.bonneReponse === this.trueAnswer) {
       this.answer = true;
     } else {

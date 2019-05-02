@@ -3,5 +3,6 @@
 <label [hidden]="hidden" for="oui">Oui</label>
 <input [hidden]="hidden" type="checkbox" id="non" [(ngModel)]="falseAnswer" value="false" (click)="check()">
 <label [hidden]="hidden" for="non">Non</label>
-<a [hidden]="showReponse">La bonne réponse était: {{bonneReponse}}</a>
-<button (click)="sendAnswer()" [hidden]="valide">Validé</button>
+<a [hidden]="showReponse" id="reponse">La bonne réponse était: {{bonneReponse}}</a>
+<button id="valide" (click)="sendAnswer()" [hidden]="valide">Validé</button>
+

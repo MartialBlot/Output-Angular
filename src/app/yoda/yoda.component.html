@@ -1,7 +1,8 @@
 <div *ngFor=" let question of questions">
-<app-question (getAnswer)="reponseAnswers(question)" [question]="question.title" [bonneReponse]="question.answer"></app-question>
+<app-question (decompte)="compteur($event)" (getAnswer)="reponseAnswers(question)" [question]="question.title" [bonneReponse]="question.answer"></app-question>
 </div>
 
-<button (click)="questionFinish()">Show result</button>
+<button id="show" [hidden]="btnResult" (click)="questionFinish()">Show result</button>
 
 <p [hidden]="this.finish">{{this.yodaSentence}} Your score: {{this.score}}</p>
+<p>Il reste {{decompte}} question(s)</p>
